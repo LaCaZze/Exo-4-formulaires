@@ -3,6 +3,7 @@ const express = require('express')
 var bodyParser = require("body-parser");
 const app = express()
 
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html')
@@ -10,15 +11,12 @@ app.get('/', function (req, res) {
 
 
 app.post('/resultats', function (req, res) {
-  console.log(req.params)
-    // var nombre1 = req.body.nb1
-    console.log(req.body)
-    // var nb1 = req.post.nb1;
-    // console.log(nb1);
-    // var nb2 = req.params(entree2);
-    // console.log(nb2);
+  var nombre1 = parseInt(req.body.nb1);
+  console.log(nombre1);
+  var nombre2 = parseInt(req.body.nb2);
+  console.log(nombre2);
 
-    // res.end(nb1 + nb2 + "");
+  res.end(nombre1 + nombre2 + "");
 
  
   })
