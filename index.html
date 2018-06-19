@@ -9,16 +9,19 @@
 </head>
 
 <body>
-    <form action="http://localhost:3000/resultats" method="post">
-        <input type="number" name="nb1" id="nb1">
+    <!-- <form action="http://localhost:3000/resultats" method="post"> -->
+        <input type="number" name="nb1" id="nb1" value="">
         <input type="number" name="nb2" id="nb2">
-        <input type="submit" value="addition" id="envoi">
+        <input type="button" value="addition" id="envoi">
 
-    </form>
+        <p id="resultat"></p>
 
+    <!-- </form> -->
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 
-    <!-- <script>
+    <script>
 
         $(document).ready(function () {
 
@@ -26,20 +29,31 @@
 
             $("#envoi").click(function () {
 
+                var nombre1 = $('#nb1').val();
+                var nombre2 = $('#nb2').val();
+                
                 $.ajax({
+                    data: {
+                        num1: nombre1,
+                        num2: nombre2
+                    },
+
                     url: 'http://localhost:3000/resultats',
                     type: 'POST',
 
                     success: function (res) { // code_html contient le HTML renvoyé
-
+                    // console.log(res);
+                    $('#resultat').text(res);
                     }
                 });
+                
 
             });
 
-        }) -->
+        })
 
     </script>
+
 
 
 </body>

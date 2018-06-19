@@ -11,12 +11,12 @@ app.get('/', function (req, res) {
 
 
 app.post('/resultats', function (req, res) {
-  var nombre1 = parseInt(req.body.nb1);
-  console.log(nombre1);
-  var nombre2 = parseInt(req.body.nb2);
-  console.log(nombre2);
+  var nombre11 = parseInt(req.body.num1);
+  console.log(nombre11);
+  var nombre22 = parseInt(req.body.num2);
+  console.log(nombre22);
 
-  res.end(nombre1 + nombre2 + "");
+  res.end(nombre11 + nombre22 + "");
 
  
   })
