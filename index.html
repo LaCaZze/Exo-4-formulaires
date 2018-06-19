@@ -10,11 +10,11 @@
 
 <body>
     <!-- <form action="http://localhost:3000/resultats" method="post"> -->
-        <input type="number" name="nb1" id="nb1" value="">
-        <input type="number" name="nb2" id="nb2">
-        <input type="button" value="addition" id="envoi">
+    <input type="number" name="nb1" id="nb1" value="">
+    <input type="number" name="nb2" id="nb2">
+    <input type="button" value="addition" id="envoi">
 
-        <p id="resultat"></p>
+    <p id="resultat"></p>
 
     <!-- </form> -->
 
@@ -28,25 +28,26 @@
 
 
             $("#envoi").click(function () {
-
+                //Je déclare des varible pour : grace à une methode jQuery vont recupèrer les valeurs entrée par l'utilisateur en ciblant sur l'id
                 var nombre1 = $('#nb1').val();
                 var nombre2 = $('#nb2').val();
-                
+                //Une fois les variables déclarés je peut utiliser mon ajax
                 $.ajax({
+                    // je creer un objet dans l'ajax pour entrer le traitement de la requette sur back dans la varaible nombre1 et 2
                     data: {
                         num1: nombre1,
                         num2: nombre2
                     },
-
+                    
                     url: 'http://localhost:3000/resultats',
                     type: 'POST',
-
+                    // une fois que l'ajax est "success" la fonction exécute la variable res recupérer du back et l'affiche dans p avec le methode jQuery.text.
                     success: function (res) { // code_html contient le HTML renvoyé
-                    // console.log(res);
-                    $('#resultat').text(res);
+                        // console.log(res);
+                        $('#resultat').text(res);
                     }
                 });
-                
+
 
             });
 
@@ -59,3 +60,6 @@
 </body>
 
 </html>
+
+<!-- cheminement global -->
+<!-- je stock la valeur entrée par l'utilisateur dans le une première variable -->
