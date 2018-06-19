@@ -1,19 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
-        <form action="http://localhost:3000/resultats" method="post">
-            <input type="nb1" name="nb1" id="nb1">
-            <input type="number" name="nb2" id="nb2">
-            <input type="submit" value="addition">
-    
-        </form>
 
-        <p></p>
+<body>
+    <form action="http://localhost:3000/resultats" method="post">
+        <input type="number" name="nb1" id="nb1">
+        <input type="number" name="nb2" id="nb2">
+        <input type="submit" value="addition" id="envoi">
+
+    </form>
+
+
+
+    <!-- <script>
+
+        $(document).ready(function () {
+
+
+
+            $("#envoi").click(function () {
+
+                $.ajax({
+                    url: 'http://localhost:3000/resultats',
+                    type: 'POST',
+
+                    success: function (res) { // code_html contient le HTML renvoyé
+
+                    }
+                });
+
+            });
+
+        }) -->
+
+    </script>
+
+
 </body>
+
 </html>
